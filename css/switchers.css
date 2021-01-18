@@ -1,0 +1,232 @@
+
+.style-switcher{
+    position: fixed;
+    top: 20px;
+    right: 0;
+    z-index: 10;
+    background-color: #ffffff;
+    padding: 15px;
+    border: 1px solid #d4d4e3;
+    border-right: none;
+    border-radius: 0 0 0 5px;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.style-switcher.open, .uploadBox.open{
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+.style-switcher h5{
+    font-size: 16px;
+    color: #302e4d;
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e8dfec;
+}
+
+.style-switcher .toggle-style-switcher{
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    background: #ffffff;
+    left: -46px;
+    top: 0;
+    border: 1px solid #d4d4e3;
+    border-right: none;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+}
+
+.style-switcher .toggle-style-switcher .fa{
+    font-size: 20px;
+    line-height: 43px;
+}
+
+.uploadBox{
+    position: fixed;
+    top: 40%;
+    right: 0;
+    background-color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    z-index: 10;
+    text-align: center;
+    background-image: linear-gradient(120deg, #ec183838, #302e4d44);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.uploadBox .uploadHeader{
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e8dfec;
+    margin-bottom: 1rem;
+}
+
+.uploadBox .uploadBtn{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    background-color: #ec183838;
+}
+
+.uploadBox .uploadBtn:hover{
+    background-color: #302e4d44;
+}
+.uploadBox .uploadIcon{
+    position: absolute;
+    background-image: linear-gradient(120deg, #ec183838, #302e4d44);
+    padding: 1rem;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    top: 50%;
+    left: -46px;
+    cursor: pointer;
+}
+
+.uploadBox .uploadIcon .fa{
+    transition: all 1s ease;
+}
+
+.uploadBox .uploadIcon.animate{
+    animation: vibrate 2s infinite;
+}
+
+.uploadBox .uploadIcon i.rotate{
+    transform: rotateZ(90deg);
+}
+
+@keyframes vibrate{
+    0%{
+        transform: translateX(0);
+    }
+    20%{
+        transform: translateX(-5px);
+    }
+    40%{    
+        transform: translateX(0);
+    }
+    60%{
+        transform: translateX(-5px);
+    }
+    80%{
+        transform: translateX(0);
+    }
+    90%{
+        transform: translateX(-5px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+
+}
+
+.popContainer{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.popContainer.popActive{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.popBox{
+    position: relative;
+    background-color: #ffffff;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+}
+
+.popBox form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.popBox button{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    background-color: #ec183838;
+}
+
+.popBox button:hover{
+    background-image: linear-gradient(120deg, #ec183838, #302e4d44);
+}
+
+.popBox h2{
+    padding: 1rem 0 0;
+}
+
+.popBox input{
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+.popBox input[type=text]{
+    border-bottom: 1px solid #252627;
+}
+
+.popBox input[type=file]{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.popContainer .close-pop{
+    position: absolute;
+    top: -1rem;
+    right: 0.5rem;
+    font-size: 3rem;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popContainer .close-pop:hover{
+    transform: rotate(45deg) scale(1.1);
+}

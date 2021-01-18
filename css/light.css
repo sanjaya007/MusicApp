@@ -1,0 +1,17 @@
+.left-nav .logo a::after{
+    border-top: 4px solid #ec1839;
+    border-left: 4px solid #ec1839;
+}
+
+.left-nav .logo a::before{
+    border-bottom: 4px solid #ec1839;
+    border-right: 4px solid #ec1839;
+}
+
+body.dark .left-nav .nav li a:hover, .left-nav .nav li a:hover, .left-nav .nav li a.active, body.dark .left-nav .nav li a.active{
+    color: #ec1839;
+}
+
+.left-nav .nav-toggler span, .left-nav .nav-toggler span::before, .left-nav .nav-toggler span::after, .developer .info .social-links a, .music-title ::before, .music-title ::after{ 
+    background-color: #ec1839;
+}

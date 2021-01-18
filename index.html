@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/light.css">
+    <link rel="stylesheet" href="css/switchers.css">
+</head>
+<body>
+    <!-- Main Page -->
+    <div class="application">
+        <!-- Side Nav Starts -->
+        <div class="left-nav">
+           <!-- logo -->
+           <div class="logo">
+                <a href="index.html"> Music </a>
+           </div>
+           <!-- Nav Toggler button -->
+           <div class="nav-toggler">
+               <span></span>
+           </div>   
+           <!-- nav -->
+           <ul class="nav">
+                <li><a href="#home" id="home" class="active"><i class="fa fa-home"></i> Home </a></li>
+                <li onclick="Music.getAllMusic();"><a href="#music" id="music"><i class="fa fa-music"></i> Music </a></li>
+                <li><a href="#playlist" id="playlist"><i class="fa fa-bookmark"></i> Playlist </a></li>
+                <li onclick="Music.getAllFavs();"><a href="#favourites" id="favourites"><i class="fa fa-heart"></i> Favourites </a></li>
+                <li><a href="#developer" id="developer"><i class="fa fa-globe"></i> Developer </a></li>
+                <li><a href="#contact" id="contact"><i class="fa fa-phone"></i> Contact</a></li>
+           </ul>
+
+           <div class="copyright-text">
+               &copy; 2020 Sanjaya Paudel 
+           </div>
+
+        </div>
+        <!-- Side Van Ends -->
+        <!-- Main Content -->
+        <div class="main">
+            <!-- Home Section -->
+            <section class="section home show" id="home">
+                <div class="container">
+                    <div class="intro">
+                        <img src="images/musicProfile.jpg" alt="music" class="shadow-dark">
+                        <h1>Welcome into the music world ...</h1>
+                        <p> Feel the music </p>
+                    </div>
+                </div>    
+            </section>
+            <!-- Home Section Ends -->
+
+            <!-- Music Page Starts -->
+            <section class="section music" id="music">
+                <div class="container">
+                    <!-- <img class="preloader" src="./images/preloader.gif"/> -->
+                    <div class="row">
+                        <div class="music-title">
+                            <h2>Listen to me ..... </h2>
+                        </div>
+                    </div>
+                    <div class="row1" id="row1">
+                        <!-- <div class="music-container">
+                            <div class="image-container">
+                                <img src="./images/guitar.png" alt="guitar">
+                            </div>
+                            <div class="music-name">
+                                <h2>Serhat Durmus</h2>
+                                <p>Serhat Durmus-Yalan.mp3 </p>
+                            </div>
+                            <div class="music-icon">
+                                <i class="fa fa-heart"></i>
+                                <i class="fa fa-play"></i>
+                                <i class="fa fa-pause"></i>
+                                <i class="fa fa-bookmark"></i>
+                            </div>
+
+                        </div> -->
+
+                        
+                    </div>    
+                </div>
+
+            </section>
+            <!-- Music Page Ends -->
+
+            <!-- Playlist starts  -->
+            <section class="section playlist" id="playlist">
+                <div class="container">
+                    <div class="row">
+                        <div class="music-title">
+                            <h2> Playlist </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Playlist ends  -->
+
+            <!-- Favourites starts -->
+            <section class="section playlist" id="favourites">
+                <div class="container">
+                    <div class="row">
+                        <div class="music-title">
+                            <h2> Favourites </h2>
+                        </div>
+                    </div>
+
+                    <div class="row1" id="allFavs">
+                        
+                    </div>
+                    
+                </div>
+            </section>
+            <!-- Favourites ends -->
+
+            <!-- Developer Section  -->
+            <section class="section developer" id="developer">
+                <div class="container">
+                    <div class="info">
+                        <img src="images/developer.jpeg" alt="music" class="shadow-dark">
+                        <h1>Sanjaya Paudel</h1>
+                        <p> I'm Web Developer </p>
+                        <div class="social-links">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Developer Section End -->
+
+            <!-- Contact Starts -->
+            <section class="section playlist" id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="music-title">
+                            <h2> Contact </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact Ends -->
+        </div>
+        <!-- Main Content Ends -->
+    </div>
+    <!-- Main Page Ends -->
+
+    <!-- Upload Files Starts-->
+    <div class="uploadBox">
+        
+        <div class="uploadHeader">
+            <h3> Tap to upload music </h3>
+        </div>
+
+        <button class="uploadBtn"> Ready ! </button>
+
+        <div class="uploadIcon animate">
+            <i class="fa fa-upload"></i>
+        </div>
+    </div>
+    <!-- Upload Files Ends-->
+
+    <!-- Style-Switcher -->
+    <div class="style-switcher">
+        <div class="toggle-style-switcher">
+            <i class="fa fa-cog fa-spin"></i>
+        </div>
+        <h5>Style Switcher</h5>
+        <label>
+            <input type="radio" class="body-skin" name="body-style" value="light" checked="true">
+            Light
+        </label>
+        <label>
+            <input type="radio" class="body-skin" name="body-style" value="dark">
+            Dark
+        </label>
+    </div>
+    <!-- Style Switcher Ends -->
+
+    <!-- POP Box Starts -->
+    <div class="popContainer">
+        <div class="popBox">
+            <p class="close-pop"> + </p>
+                <form action="./php/uploadAudio.php" method="post" enctype="multipart/form-data">
+                    <h2> Upload your audio file ! </h2>
+                    <input type="text" placeholder="Artist name ......" name="artist" required>
+                    <input type="file" name="audio">
+                    <button type="submit" name="uploadBtn"> Upload </button>
+                </form>
+        </div>
+    </div>
+    <!-- POP Box Ends -->
+
+    <!-- POP Music Player starts -->
+    <div id="musicPlayer" class="music-player hidden">
+        <div id="musicTime"></div>
+        <div id="loading" style="display: none;"></div>
+        <div id="waveform"></div>
+        <div class="playerHover">
+            <div id="onHover">
+                <i class="fa fa-pause" id="hoverPlay" onclick="Music.playToggle();"></i>
+            </div>
+        </div>
+    </div>
+    <!-- POP Music Player ends -->
+
+<script src="./js/lib/wavesurfer.js"></script>
+<script src="./js/websurfurTask.js"></script>
+<script src="js/compose.js"></script>
+<script src="js/script.js"></script>
+<script src="js/switchers.js"></script>
+<script src="js/music.js"></script>
+<script src="js/favMusic.js"></script>
+
+<!-- <script src="https://unpkg.com/wavesurfer.js"></script> -->
+</body>
+</html>
